@@ -8,10 +8,7 @@ from nltk.stem import PorterStemmer
 
 nltk.download('stopwords')
 
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+
 
 
 # load model and vectorizer
