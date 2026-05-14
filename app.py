@@ -8,6 +8,12 @@ from nltk.stem import PorterStemmer
 
 nltk.download('stopwords')
 
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
+
 # load model and vectorizer
 model = pickle.load(open('model.pkl','rb'))
 vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
@@ -45,3 +51,4 @@ if st.button("check"):
     
     else:
         st.warning("Please enter a message: ")
+
